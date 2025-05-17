@@ -1,0 +1,9 @@
+<div class="mt-4 p-3">
+<h1>Result</h1>
+
+<p>Your word was: <%=@word%> </p>
+<p><%= @result[:message] %></p>
+<p>Score: <%= @result[:score].round(2) %></p>
+
+<%= link_to "Guess again", new_path %>
+</div>

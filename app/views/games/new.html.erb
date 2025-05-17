@@ -1,0 +1,17 @@
+<div class="mt-4 p-3">
+<h1>Longest Word</h1>
+
+<% @letters.each do |letter| %>
+  <li class="badge bg-primary fs-4 me-1"><%=letter%> </li>
+<% end %>
+
+<form action="/score" method="post" data-turbo="false">
+  <div class="d-flex mt-4 p-3">
+  <input type="text" name="guess">
+ <%= hidden_field_tag :letters, @letters.join(",") %>
+ <%= hidden_field_tag :start_time, @start_time %>
+  <input class="btn btn-primary" type="submit" value="Guess!">
+  </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+</div>
